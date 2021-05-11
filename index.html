@@ -3,10 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<title>Home Page</title>
 </head>
 <body>
-	<h1></h1>
-	
+	<header>
+		<h1>Prioritize It!</h1>
+		<p>You need goals. You need to prioritize those goals. I can help</p>
+	</header>
+
+	<main>
+		<h2>Setting Goals</h2>
+		<p>In the text field below, write down all of the tasks that need to be accomplished. Separate each task with a new line.</p>
+		<p>Once you have written down all the tasks you wish, hit the submit button and you will be taken to the next step.</p>
+
+		<form>
+			<label for="unsorted_list">List to be prioritized:</label>
+			<textarea rows="10" id="unsorted_list" name="unsorted_list"></textarea>
+			<p>
+				<button id="submit_btn" type="button">Submit!</button>
+			</p>
+		</form>
+	</main>
+
+	<footer>
+		<p>View this page's <a href="https://github.com/JohnMayes/Prioritize-It">source code</a> on GitHub.</p>
+	</footer>
+
 </body>
 </html>

@@ -1,0 +1,99 @@
+:root {
+  --black: #252525;
+  --light-grey: #F7F8FA;
+  --white: #FFFFFF;
+  --light-blue: #30C9E8;
+  --dark-blue: #3B4A4D;
+  --red: #FF4431;
+}
+
+/* OVERIDES */
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  box-sizing: border-box;
+  padding: 0; 
+  margin: 0;
+}
+
+textarea {
+  overflow: auto;
+} 
+
+/* GENERAL SYLES */
+
+body {
+  background-color: var(--light-grey);
+  color: var(--black);
+  margin: 0;
+}
+
+header {
+  background-color: var(--dark-blue);
+  padding: 1em;
+  text-align: center;
+  color: var(--light-grey);
+}
+
+main {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+} 
+
+footer {
+  margin-top: 2em;
+  background-color: var(--dark-blue);
+  padding: 1em;
+  text-align: center;
+  color: var(--light-grey);
+}
+
+h1:first-letter {
+  color: var(--red);
+  font-size: 1.2em;
+}
+
+h2 {
+  text-align: center;
+} 
+
+a {
+  color: var(--light-blue);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* FORM */
+label {
+  display: flex;
+  padding-bottom: .5em;
+} 
+
+textarea {
+  width: 100%;
+  padding: .4em;
+}
+
+form p {
+  margin-top: .5em;
+  text-align: center;
+}
+
+button {
+  padding: .5em 0;
+  width: 100%;
+}
