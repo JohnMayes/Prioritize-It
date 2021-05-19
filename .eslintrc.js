@@ -80,7 +80,7 @@ module.exports = {
 		'no-useless-rename': 1,
 		'no-var': 1,
 		'object-shorthand': 1,
-		'prefer-arrow-callback': [ 'error', { allowNamedFunctions: true }],
+		'prefer-arrow-callback': [ 'warn', { allowNamedFunctions: true }],
 		'prefer-const': 1,
 		'prefer-numeric-literals': 1,
 		'prefer-spread': 1,
