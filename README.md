@@ -1,21 +1,21 @@
 # Prioritize It
  Priority App
 
-##Description
+## Description
 Help a person prioritize a list of to-do items using relative ranking of two items at a time.
 
-##Priority Rating
+## Priority Rating
 - accept a written list of to-do items
 - present items two at a time
 - user selects which of the two items has higher priority
 - show results to user ranked highest to lowest priority
 - stored in browser 
 
-##Secondary goals
+## Secondary goals
 - delete / mark as done items on list
 - after change in list, re-establish list?
 
-##User Interface
+## User Interface
 - 3 screens
 	1 Enter list
 	2 Display and select relative priority
@@ -32,10 +32,10 @@ Help a person prioritize a list of to-do items using relative ranking of two ite
 - Screen 3 
 	- Output list read from DB outputted into ordered list
 
-##Unit test it yo
+## Unit test it yo
 - Function that takes in an array, and returns an array of pairs of every possible combination of items
 - Increment value of each item per dom.onclick
 - return ordered list sorted by number of times chosen 
 
-##Specific to dos
+## Specific to dos
 - make dummy html page that when pushed to github is live 
