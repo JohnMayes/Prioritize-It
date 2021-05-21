@@ -18,15 +18,32 @@
 		<p>Once you have written down all the tasks you wish, hit the submit button and you will be taken to the next step.</p>
 
 		<form>
-			<label for="unsorted_list">List to be prioritized:</label>
-			<textarea rows="10" id="unsorted_list" name="unsorted_list"></textarea>
+			<label for="list_input">List to be prioritized:</label>
+			<textarea rows="10" id="list_input" name="list_input"></textarea>
 			<p>
-				<button id="submit_btn" type="button">Submit!</button>
+				<a href="#unsorted_list"><button id="submit_btn" type="button">Submit</button></a>
 			</p>
-			<p><button id="prioritize_btn" type="button">Prioritize</button></p>
 		</form>
 
-		<section id="button_list"></section>
+		<section id="unsorted_list">
+			<h2>Here is your to-do list:</h2>
+			<ul id="unsorted"></ul>
+			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the more important of the two. Ready to prioritize?</p>
+			<p>
+				<button>No, start over</button>
+				<button id="prioritize_btn" type="button">Yes, Prioritize it!</button>
+			</p>
+		</section>
+
+		<section id="button_section">
+			<p class="button_box">Which of these two tasks is more important to you?</p>
+		</section>
+
+		<section id="sorted_list">
+			<h2>Here is your prioritized list:</h2>
+			<p>Your to do list is now ranked from highest to lowest priority.</p> 
+			<ol id="sorted"></ol>
+		</section>
 	</main>
 
 	<footer>

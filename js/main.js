@@ -1,12 +1,16 @@
-const input = document.getElementById('unsorted_list')
-const subButton = document.getElementById('submit_btn')
-
+const input = document.getElementById('list_input')
+const submitBtn = document.getElementById('submit_btn')
+const unsorted = document.getElementById('unsorted')
+const sorted = document.getElementById('sorted')
 
 let list = []
+let pairs = []
 
 /* Generates an array of objects with two properties:
-	the name of the task, and an initial 'weight' value */
-subButton.onclick = function makeList() {
+	the name of the task, and an initial 'weight' value.
+	Prints the array as an unorded list for user to see */
+
+function makeList() {
 	list = []
 	const arr = input.value.split('\n')
 	for (let i = 0; i < arr.length; i++) {
@@ -14,33 +18,84 @@ subButton.onclick = function makeList() {
 			name: arr[i],
 			weight: 0,
 		})
+
+		const listItem = document.createElement('li')
+		unsorted.append(listItem)
+		listItem.textContent = list[i].name
 	};
 }
-
-const priButton = document.getElementById('prioritize_btn')
-const btnSection = document.getElementById('button_list')
 
 /* Generates every possible combination of object pairs
-	in the initial 'list' array, creates a button tied to each,
-	and adds an event listener which will increment the respective
-	object's 'weight' value by one when clicked */
+	in the initial 'list' array */
 
-priButton.onclick = function generatePairs() {
+function generatePairs() {
+	pairs = []
 	for (let i = 0; i < list.length - 1; i++) {
 		for (let j = i + 1; j < list.length; j++) {
-			const buttonOne = document.createElement('button')
-			btnSection.append(buttonOne)
-			buttonOne.textContent = list[i].name
-			buttonOne.addEventListener('click', () => {
-				list[i].weight = list[i].weight + 1
-			})
-
-			const buttonTwo = document.createElement('button')
-			btnSection.append(buttonTwo)
-			buttonTwo.textContent = list[j].name
-			buttonTwo.addEventListener('click', () => {
-				list[j].weight = list[j].weight + 1
-			})
-		};
-	};
+			pairs.push([ list[i].name, list[j].name ])
+		}
+	}
 }
+
+submitBtn.addEventListener('click', () => {
+	makeList()
+	generatePairs()
+})
+
+const prioritizeBtn = document.getElementById('prioritize_btn')
+const btnSection = document.getElementById('button_section')
+
+/* Create buttons for each set of object pairs.
+	Adds an event listener which will increment the respective
+	object's 'weight' value by one when clicked, and then
+	display the next set of pairs */
+
+let count = 0
+
+function showPairs() {
+	const innnerCount = count
+	if (count < pairs.length) {
+		const buttonOne = document.createElement('button')
+		btnSection.append(buttonOne)
+		buttonOne.textContent = pairs[count][0]
+		buttonOne.addEventListener('click', () => {
+			const item = list[list.findIndex(x => x.name == pairs[innnerCount][0])]
+			item.weight = item.weight + 1
+			showPairs()
+		})
+
+		const buttonTwo = document.createElement('button')
+		btnSection.append(buttonTwo)
+		buttonTwo.textContent = pairs[count][1]
+		buttonTwo.addEventListener('click', () => {
+			const item = list[list.findIndex(x => x.name == pairs[innnerCount][1])]
+			item.weight = item.weight + 1
+			showPairs()
+		})
+
+		count = count + 1
+	} else {
+		const finishButton = document.createElement('button')
+		btnSection.append(finishButton)
+		finishButton.textContent = 'Finished! Show me my list'
+		finishButton.addEventListener('click', () => {
+			sortList()
+			printSortedList()
+		})
+	}
+}
+
+function sortList() {
+	list.sort((a, b) => b.weight - a.weight)
+	return list
+}
+
+function printSortedList() {
+	for (let i = 0; i < list.length; i++) {
+		const listItem = document.createElement('li')
+		sorted.append(listItem)
+		listItem.textContent = list[i].name
+	}
+}
+
+prioritizeBtn.onclick = showPairs
