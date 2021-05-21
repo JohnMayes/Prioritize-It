@@ -1,7 +1,7 @@
-import { suite } from 'uvu';
-import * as assert from 'uvu/assert';
+import { suite } from 'uvu'
+import * as assert from 'uvu/assert'
 
-import {make_cool} from './example.js'
+import { make_cool } from './example.js'
 
 const test = suite('example')
 
