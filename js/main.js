@@ -1,24 +1,24 @@
-const input = document.getElementById('unsorted_list');
-const subButton = document.getElementById('submit_btn');
+const input = document.getElementById('unsorted_list')
+const subButton = document.getElementById('submit_btn')
 
 
-let list = [];
+let list = []
 
 /* Generates an array of objects with two properties:
 	the name of the task, and an initial 'weight' value */
 subButton.onclick = function makeList() {
-	list = [];
-	let arr = input.value.split('\n');
+	list = []
+	const arr = input.value.split('\n')
 	for (let i = 0; i < arr.length; i++) {
 		list.push({
 			name: arr[i],
-			weight: 0
+			weight: 0,
 		})
 	};
-} 
+}
 
-const priButton = document.getElementById('prioritize_btn');
-const btnSection = document.getElementById('button_list');
+const priButton = document.getElementById('prioritize_btn')
+const btnSection = document.getElementById('button_list')
 
 /* Generates every possible combination of object pairs
 	in the initial 'list' array, creates a button tied to each,
@@ -28,21 +28,19 @@ const btnSection = document.getElementById('button_list');
 priButton.onclick = function generatePairs() {
 	for (let i = 0; i < list.length - 1; i++) {
 		for (let j = i + 1; j < list.length; j++) {
-			let buttonOne = document.createElement('button');
+			const buttonOne = document.createElement('button')
 			btnSection.append(buttonOne)
-			buttonOne.textContent = list[i].name;
-			buttonOne.addEventListener('click', function() {
-				list[i].weight = list[i].weight + 1;
-				console.log(list[i].weight);
-			});
+			buttonOne.textContent = list[i].name
+			buttonOne.addEventListener('click', () => {
+				list[i].weight = list[i].weight + 1
+			})
 
-			let buttonTwo = document.createElement('button');
+			const buttonTwo = document.createElement('button')
 			btnSection.append(buttonTwo)
-			buttonTwo.textContent = list[j].name;
-			buttonTwo.addEventListener('click', function() {
-				list[j].weight = list[j].weight + 1;
-				console.log(list[j].weight);
-			});
+			buttonTwo.textContent = list[j].name
+			buttonTwo.addEventListener('click', () => {
+				list[j].weight = list[j].weight + 1
+			})
 		};
 	};
 }
