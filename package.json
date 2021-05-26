@@ -5,7 +5,7 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "test": "uvu js '.*\\.test\\.js'",
+    "test": "uvu",
     "autoformat": "eslint ./ --ext=.js,.html --fix",
     "lint": "eslint ./ --ext=.js,.html",
     "dev": "live-server"

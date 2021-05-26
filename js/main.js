@@ -1,3 +1,5 @@
+import generatePairs from './generatePairs.js'
+
 const input = document.getElementById('list_input')
 const submitBtn = document.getElementById('submit_btn')
 const unsorted = document.getElementById('unsorted')
@@ -28,18 +30,10 @@ function makeList() {
 /* Generates every possible combination of object pairs
 	in the initial 'list' array */
 
-function generatePairs() {
-	pairs = []
-	for (let i = 0; i < list.length - 1; i++) {
-		for (let j = i + 1; j < list.length; j++) {
-			pairs.push([ list[i].name, list[j].name ])
-		}
-	}
-}
-
 submitBtn.addEventListener('click', () => {
+	const names = list.map(toDo => toDo.name)
 	makeList()
-	generatePairs()
+	pairs = generatePairs(names)
 })
 
 const prioritizeBtn = document.getElementById('prioritize_btn')
