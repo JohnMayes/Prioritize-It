@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import generatePairs from './generatePairs.js'
 
 const input = document.getElementById('list_input')
