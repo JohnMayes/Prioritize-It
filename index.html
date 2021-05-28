@@ -13,7 +13,7 @@
 	</header>
 
 	<main>
-		<h2>Setting Goals</h2>
+		<h2 id="goals">Setting Goals</h2>
 		<p>In the text field below, write down all of the tasks that need to be accomplished. Separate each task with a new line.</p>
 		<p>Once you have written down all the tasks you wish, hit the submit button and you will be taken to the next step.</p>
 
@@ -28,21 +28,13 @@
 		<section id="unsorted_list">
 			<h2>Here is your to-do list:</h2>
 			<ul id="unsorted"></ul>
-			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the more important of the two. Ready to prioritize?</p>
+			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the most important of the two. Ready to prioritize?</p>
 			<p>
-				<button>No, start over</button>
-				<button id="prioritize_btn" type="button">Yes, Prioritize it!</button>
+				<a href="#goals"><button id="clear_list">No, start over</button></a>
+				<a href="prioritize.html">
+					<button id="prioritize_btn" type="button">Yes, Prioritize it!</button>
+				</a>
 			</p>
-		</section>
-
-		<section id="button_section">
-			<p class="button_box">Which of these two tasks is more important to you?</p>
-		</section>
-
-		<section id="sorted_list">
-			<h2>Here is your prioritized list:</h2>
-			<p>Your to do list is now ranked from highest to lowest priority.</p> 
-			<ol id="sorted"></ol>
 		</section>
 	</main>
 
@@ -50,6 +42,6 @@
 		<p>View this page's <a href="https://github.com/JohnMayes/Prioritize-It">source code</a> on GitHub.</p>
 	</footer>
 
-	<script type="module" src="js/main.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
