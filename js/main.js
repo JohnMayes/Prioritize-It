@@ -3,27 +3,20 @@
 
 const input = document.getElementById('list_input')
 const submitBtn = document.getElementById('submit_btn')
-const unsorted = document.getElementById('unsorted')
 
 let list = []
 
 /* Generates an array of objects with two properties:
-	the name of the task, and an initial 'weight' value.
-	Prints the array as an unorded list for user to see */
+	the name of the task, and an initial 'weight' value. */
 
 function makeList() {
 	list = []
-	unsorted.textContent = ''
 	const arr = input.value.split('\n')
 	for (let i = 0; i < arr.length; i++) {
 		list.push({
 			name: arr[i],
 			weight: 0,
 		})
-
-		const listItem = document.createElement('li')
-		unsorted.append(listItem)
-		listItem.textContent = list[i].name
 	};
 
 	window.localStorage.setItem('list', JSON.stringify(list))
@@ -45,10 +38,6 @@ function generatePairs(array) {
 submitBtn.addEventListener('click', () => {
 	makeList()
 	const names = list.map(toDo => toDo.name)
-	pairs = generatePairs(names)
+	let pairs = generatePairs(names)
 	window.localStorage.setItem('pairs', JSON.stringify(pairs))
 })
-
-const prioritizeBtn = document.getElementById('prioritize_btn')
-
-//	prioritizeBtn.onclick = JSON stringify, local storage
