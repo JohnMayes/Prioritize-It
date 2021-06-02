@@ -12,3 +12,10 @@ const unsorted = document.getElementById('unsorted');
 })()
 
 const prioritizeBtn = document.getElementById('prioritize_btn')
+
+function toggleModal() {
+	document.querySelector('.modal').classList.toggle('modal--hidden')
+	document.querySelector('.overlay').classList.toggle('overlay--hidden')
+}
+
+prioritizeBtn.addEventListener('click', toggleModal)
