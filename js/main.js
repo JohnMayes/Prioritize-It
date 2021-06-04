@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import generatePairs from './generatePairs.js'
+import { write } from './data.js'
 
 const input = document.getElementById('list_input')
 const submitBtn = document.getElementById('submit_btn')
@@ -19,7 +20,7 @@ function makeList() {
 		})
 	};
 
-	window.localStorage.setItem('list', JSON.stringify(list))
+	write('list', list)
 }
 
 /* Generates every possible combination of object pairs
@@ -29,5 +30,5 @@ submitBtn.addEventListener('click', () => {
 	makeList()
 	const names = list.map(toDo => toDo.name)
 	const pairs = generatePairs(names)
-	window.localStorage.setItem('pairs', JSON.stringify(pairs))
+	write('pairs', pairs)
 })
