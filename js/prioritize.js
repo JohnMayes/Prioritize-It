@@ -4,8 +4,11 @@ function main(list, pairs) {
 	let pairCount = 0
 
 	function incrementPair() {
-		if (pairCount < pairs.length) {
+		console.log(pairs.length, pairCount)
+		if (pairCount < pairs.length - 1) {
 			pairCount++
+		} else {
+			alert('it broke')
 		}
 	}
 
@@ -22,19 +25,9 @@ function main(list, pairs) {
 		obj.weight = obj.weight + 1
 	}
 
-	function toggleModal() {
-		document.querySelector('.modal').classList.toggle('modal--hidden')
-		document.querySelector('.overlay').classList.toggle('overlay--hidden')
-	}
-
 	const prioritizeBtn = document.getElementById('prioritize_btn')
 	const buttonOne = document.getElementById('btn_one')
 	const buttonTwo = document.getElementById('btn_two')
-
-	prioritizeBtn.addEventListener('click', () => {
-		toggleModal()
-		updateButtonTxt()
-	})
 
 	function updateButtonTxt() {
 		const current = getCurrentObj()
@@ -58,6 +51,8 @@ function main(list, pairs) {
 		updateButtonTxt()
 		console.log(list)
 	})
+
+	updateButtonTxt()
 }
 
 Promise.all([
@@ -65,10 +60,4 @@ Promise.all([
 	read('pairs'),
 ]).then(([ list, pairs ]) => {
 	main(list, pairs)
-	const unsorted = document.getElementById('unsorted')
-	list.forEach(element => {
-		const listItem = document.createElement('li')
-		unsorted.append(listItem)
-		listItem.textContent = element.name
-	})
 })
