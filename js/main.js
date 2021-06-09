@@ -12,7 +12,7 @@ let list = []
 
 function makeList() {
 	list = []
-	const arr = input.value.split('\n')
+	const arr = input.value.split('\n').filter(str => str)
 	for (let i = 0; i < arr.length; i++) {
 		list.push({
 			name: arr[i],

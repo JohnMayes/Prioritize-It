@@ -25,7 +25,6 @@ function main(list, pairs) {
 		obj.weight = obj.weight + 1
 	}
 
-	const prioritizeBtn = document.getElementById('prioritize_btn')
 	const buttonOne = document.getElementById('btn_one')
 	const buttonTwo = document.getElementById('btn_two')
 
