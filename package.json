@@ -1,0 +1,30 @@
+{
+  "name": "prioritize-it",
+  "version": "1.0.0",
+  "description": "Priority App",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "uvu",
+    "autoformat": "eslint ./ --ext=.js,.html --fix",
+    "lint": "eslint ./ --ext=.js,.html",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnMayes/Prioritize-It.git"
+  },
+  "author": "JohnMayes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JohnMayes/Prioritize-It/issues"
+  },
+  "homepage": "https://github.com/JohnMayes/Prioritize-It#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.23.2",
+    "live-server": "^1.2.1",
+    "uvu": "^0.5.1"
+  }
+}

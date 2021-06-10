@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title>Home Page</title>
+	<title>Testing</title>
 </head>
 <body>
 	<header>
@@ -13,15 +13,15 @@
 	</header>
 
 	<main>
-		<h2>Setting Goals</h2>
+		<h2 id="goals">Setting Goals</h2>
 		<p>In the text field below, write down all of the tasks that need to be accomplished. Separate each task with a new line.</p>
 		<p>Once you have written down all the tasks you wish, hit the submit button and you will be taken to the next step.</p>
 
 		<form>
-			<label for="unsorted_list">List to be prioritized:</label>
-			<textarea rows="10" id="unsorted_list" name="unsorted_list"></textarea>
+			<label for="list_input">List to be prioritized:</label>
+			<textarea rows="10" id="list_input" name="list_input"></textarea>
 			<p>
-				<button id="submit_btn" type="button">Submit!</button>
+				<a href="prioritize.html"><button id="submit_btn" type="button">Submit</button></a>
 			</p>
 		</form>
 	</main>
@@ -30,5 +30,6 @@
 		<p>View this page's <a href="https://github.com/JohnMayes/Prioritize-It">source code</a> on GitHub.</p>
 	</footer>
 
+	<script type="module" src="js/main.js"></script>
 </body>
 </html>

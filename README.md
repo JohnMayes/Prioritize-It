@@ -37,5 +37,5 @@ Help a person prioritize a list of to-do items using relative ranking of two ite
 - Increment value of each item per dom.onclick
 - return ordered list sorted by number of times chosen 
 
-## Specific to dos
-- make dummy html page that when pushed to github is live 
+##Specific to dos
+- use write in data module to save which objects have been updated
