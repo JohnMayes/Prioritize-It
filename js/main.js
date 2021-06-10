@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import generatePairs from './generatePairs.js'
 import { write } from './data.js'
 
@@ -17,7 +16,6 @@ function makeList() {
 		list.push({
 			name: arr[i],
 			weight: 0,
-			id: `${i}`
 		})
 	};
 

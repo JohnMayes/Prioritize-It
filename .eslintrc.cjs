@@ -61,7 +61,7 @@ module.exports = {
 		'no-multi-spaces': [ 'error', { exceptions: { Property: false } }],
 		'no-useless-return': 1,
 		'eol-last': always,
-		'linebreak-style': 1,
+		'linebreak-style': [ 'error', 'windows' ],
 		'no-lonely-if': 1,
 		'no-unneeded-ternary': 1,
 		'object-curly-newline': [ 'error', { consistent: true }],

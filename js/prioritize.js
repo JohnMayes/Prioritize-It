@@ -1,24 +1,25 @@
 import { read } from './data.js'
+import { write } from './data.js'
 
-function main(list, pairs) { 
-	let pairCount = 0
+function main(list, pairs) {
+	let indexCount = 0
 
 	function incrementPair() {
-		console.log(pairs.length, pairCount)
-		if (pairCount < pairs.length - 1) {
-			pairCount++
+		console.log(pairs.length, indexCount)
+		if (indexCount < pairs.length - 1) {
+			indexCount++
 		} else {
-			alert('it broke')
+			finished()
 		}
 	}
 
 	function getCurrentObj() {
-		const pair = pairs[pairCount]
+		const pair = pairs[indexCount]
 		const nameOne = pair[0]
 		const nameTwo = pair[1]
 		const one = list.find(toDo => toDo.name === nameOne)
 		const two = list.find(toDo => toDo.name === nameTwo)
-		return {one, two}
+		return { one, two }
 	}
 
 	function incrementValue(obj) {
@@ -35,6 +36,11 @@ function main(list, pairs) {
 
 		buttonOne.textContent = nameOne.name
 		buttonTwo.textContent = nameTwo.name
+	}
+
+	function finished() {
+		write('list', list)
+		window.location.replace('finished.html')
 	}
 
 	buttonOne.addEventListener('click', () => {
