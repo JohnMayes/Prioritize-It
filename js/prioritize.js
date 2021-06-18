@@ -5,7 +5,6 @@ function main(list, pairs) {
 	let indexCount = 0
 
 	function incrementPair() {
-		console.log(pairs.length, indexCount)
 		if (indexCount < pairs.length - 1) {
 			indexCount++
 		} else {
@@ -15,10 +14,10 @@ function main(list, pairs) {
 
 	function getCurrentObj() {
 		const pair = pairs[indexCount]
-		const nameOne = pair[0]
-		const nameTwo = pair[1]
-		const one = list.find(toDo => toDo.name === nameOne)
-		const two = list.find(toDo => toDo.name === nameTwo)
+		const idOne = pair[0]
+		const idTwo = pair[1]
+		const one = list.find(toDo => toDo.id === idOne)
+		const two = list.find(toDo => toDo.id === idTwo)
 		return { one, two }
 	}
 
@@ -47,14 +46,12 @@ function main(list, pairs) {
 		incrementValue(getCurrentObj().one)
 		incrementPair()
 		updateButtonTxt()
-		console.log(list)
 	})
 
 	buttonTwo.addEventListener('click', () => {
 		incrementValue(getCurrentObj().two)
 		incrementPair()
 		updateButtonTxt()
-		console.log(list)
 	})
 
 	updateButtonTxt()

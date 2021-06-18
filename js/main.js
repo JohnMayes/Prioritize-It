@@ -16,6 +16,7 @@ function makeList() {
 		list.push({
 			name: arr[i],
 			weight: 0,
+			id: i,
 		})
 	};
 
@@ -27,7 +28,7 @@ function makeList() {
 
 submitBtn.addEventListener('click', () => {
 	makeList()
-	const names = list.map(toDo => toDo.name)
-	const pairs = generatePairs(names)
+	const ids = list.map(toDo => toDo.id)
+	const pairs = generatePairs(ids)
 	write('pairs', pairs)
 })
