@@ -1,5 +1,5 @@
 # Prioritize It
- Priority App
+ A simple little productivity app
 
 ## Description
 Help a person prioritize a list of to-do items using relative ranking of two items at a time.
@@ -32,12 +32,7 @@ Help a person prioritize a list of to-do items using relative ranking of two ite
 - Screen 3 
 	- Output list read from DB outputted into ordered list
 
-## Unit test it yo
-- Function that takes in an array, and returns an array of pairs of every possible combination of items
-- Increment value of each item per dom.onclick
-- return ordered list sorted by number of times chosen 
 
 ## Specific to dos
 - use "write" in data module to save which objects have been updated
-- update list_input from textarea to text input
 - require at least two items to be entered into list_input before execute makeList et. al.

@@ -19,11 +19,20 @@
 
 		<form>
 			<label for="list_input">List to be prioritized:</label>
-			<textarea rows="10" id="list_input" name="list_input"></textarea>
+			<input type="text" onfocus="this.value=''" id="list_input" name="list_input" required>
 			<p>
-				<a href="prioritize.html"><button id="submit_btn" type="button">Submit</button></a>
+				<input type="submit" id="input_btn" value="Add item">
 			</p>
 		</form>
+
+		<section id="unsorted_list">
+			<h3>Here is your to-do list:</h3>
+			<ul id="unsorted"></ul>
+			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the more important of the two. Ready to prioritize?</p>
+			<p>
+				<a href="prioritize.html"><button id="prioritize_btn" type="button">Yes, Prioritize It!</button></a>
+			</p>
+		</section>
 	</main>
 
 	<footer>
