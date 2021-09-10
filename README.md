@@ -34,5 +34,10 @@ Help a person prioritize a list of to-do items using relative ranking of two ite
 
 
 ## Specific to dos
-- use "write" in data module to save which objects have been updated
 - require at least two items to be entered into list_input before execute makeList et. al.
+- Track user progress using local storage
+	- At each iteration of incrementPair, save 'list' to local storage
+	- on page load, pull 'list' from local storage
+	- in 'paris', track which pairs have been already displayed, save in local storage
+	- on page load, sort 'paris' arr for which pairs have not been displayed, send to updateBtnTxt
+- Implement MVP CSS
