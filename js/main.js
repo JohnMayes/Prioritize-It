@@ -31,6 +31,13 @@ function writeToList() {
 	listItem.textContent = input
 }
 
+function testList() {
+	if (list.length < 2) {
+		window.alert('You need at least two items in your to-do list')
+		event.preventDefault()
+	}
+}
+
 inputBtn.addEventListener('click', () => {
 	input = document.getElementById('list_input').value
 	pushToList()
@@ -43,6 +50,7 @@ inputBtn.addEventListener('click', () => {
 	in the initial 'list' array */
 
 prioritizeBtn.addEventListener('click', () => {
+	testList()
 	const ids = list.map(toDo => toDo.id)
 	const pairs = generatePairs(ids)
 	write('pairs', pairs)
