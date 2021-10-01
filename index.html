@@ -3,18 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="mvp.css">
 	<title>Testing</title>
 </head>
 <body>
 	<header>
 		<h1>Prioritize It!</h1>
-		<p>You need goals. You need to prioritize those goals. I can help</p>
+		<p>You need goals. You need to prioritize those goals. I can help.</p>
 	</header>
 
 	<main>
-		<h2 id="goals">Setting Goals</h2>
-		<p>In the text input below, enter all of the tasks that need to be accomplished. Once you have entered all the tasks you wish, hit the Prioritize It! button and you will be taken to the next step.</p>
+		<section id="goals">
+		<h2>Setting Goals</h2>
+		<p>In the text input below, enter all of the tasks that need to be accomplished. Once you have entered all the tasks you wish, hit the <em>Prioritize It!</em> button and you will be taken to the next step.</p>
 
 		<form>
 			<label for="list_input">List to be prioritized:</label>
@@ -23,9 +24,9 @@
 				<input type="submit" id="input_btn" value="Add item">
 			</p>
 		</form>
+		</section>
 
 		<section id="unsorted_list">
-			<h3>Here is your to-do list:</h3>
 			<ul id="unsorted"></ul>
 			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the more important of the two. Ready to prioritize?</p>
 			<p>
