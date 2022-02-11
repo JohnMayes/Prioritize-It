@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="mvp.css">
-	<title>Testing</title>
-</head>
-<body>
-	<header>
-		<h1>Prioritize It!</h1>
-		<p>You need goals. You need to prioritize those goals. I can help.</p>
-	</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="mvp.css" />
+    <title>Prioritize It!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Prioritize It!</h1>
+    </header>
 
-	<main>
-		<section id="goals">
-		<h2>Setting Goals</h2>
-		<p>In the text input below, enter all of the tasks that need to be accomplished. Once you have entered all the tasks you wish, hit the <em>Prioritize It!</em> button and you will be taken to the next step.</p>
+    <main>
+      <section id="goals">
+        <p>
+          Do you have a list of to do items, but aren't sure where to start?
+          This little tool can help you prioritize your tasks.
+        </p>
+        <p>
+          In the text input below, enter all of the tasks that need to be
+          accomplished. Once you have entered all the tasks you wish, hit the
+          <em>Prioritize It!</em> button and you will be taken to the next step.
+        </p>
 
-		<form>
-			<label for="list_input">List to be prioritized:</label>
-			<input type="text" onfocus="this.value=''" id="list_input" name="list_input" required>
-			<p>
-				<input type="submit" id="input_btn" value="Add item">
-			</p>
-		</form>
-		</section>
+        <form>
+          <label for="list_input">Items to be prioritized:</label>
+          <input
+            type="text"
+            onfocus="this.value=''"
+            id="list_input"
+            name="list_input"
+            required
+          />
+          <p>
+            <input type="submit" id="input_btn" value="Add item" />
+          </p>
+        </form>
+      </section>
 
-		<section id="unsorted_list">
-			<ul id="unsorted"></ul>
-			<p>On the next page, you will be presented with two of these items at a time. Your task is simply to click on the item that is the more important of the two. Ready to prioritize?</p>
-			<p>
-				<a href="prioritize.html"><button id="prioritize_btn" type="button">Yes, Prioritize It!</button></a>
-			</p>
-		</section>
-	</main>
+      <section id="unsorted_list">
+        <ul id="unsorted"></ul>
+      </section>
+      <section>
+        <p>
+          <a href="prioritize.html">
+            <button id="prioritize_btn" type="button">Prioritize It!</button>
+          </a>
+        </p>
+      </section>
+    </main>
 
-	<footer>
-		<p>View this page's <a href="https://github.com/JohnMayes/Prioritize-It">source code</a> on GitHub.</p>
-	</footer>
+    <footer>
+      <p>
+        View this page's
+        <a href="https://github.com/JohnMayes/Prioritize-It">source code</a> on
+        GitHub.
+      </p>
+    </footer>
 
-	<script type="module" src="js/main.js"></script>
-</body>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
