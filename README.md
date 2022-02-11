@@ -1,6 +1,6 @@
 # Prioritize It
 
-A simple little productivity app
+A simple little productivity app. [See it running live](https://johnmayes.github.io/Prioritize-It/).
 
 ## Description
 
