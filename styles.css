@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  background-color: #f8fafc;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.raised-container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  padding: 15px 25px 25px;
+  position: relative;
+  width: 100%;
+  max-width: 75ch;
+  word-break: break-word;
+}
+
+.raised-container:after {
+  background: #4a90e2;
+  border-radius: 5px;
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.raised-container:after {
+  opacity: 0.1;
+  right: -15px;
+  top: 15px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.full-width-justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#list_input {
+  width: 100%;
+}
+
+.item_btn {
+  width: 100%;
+}

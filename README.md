@@ -40,6 +40,8 @@ Help a person prioritize a list of to-do items using relative ranking of two ite
 
 ## Specific to dos
 
+- Dark-mode
+
 - Track user progress using local storage
   - At each iteration of incrementPair, save 'list' to local storage
   - on page load, pull 'list' from local storage
