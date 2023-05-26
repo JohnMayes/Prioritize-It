@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="mvp.css" />
+    <link rel="stylesheet" type="text/css" href="vanilla.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Prioritize It!</title>
   </head>
   <body>
@@ -12,19 +13,19 @@
     </header>
 
     <main>
-      <section id="goals">
-        <p>
-          Do you have a list of to do items, but aren't sure where to start?
-          This little tool can help you prioritize your tasks.
-        </p>
-        <p>
-          In the text input below, enter all of the tasks that need to be
-          accomplished. Once you have entered all the tasks you wish, hit the
-          <em>Prioritize It!</em> button and you will be taken to the next step.
-        </p>
+      <p>
+        Do you have a list of to do items, but aren't sure where to start? This
+        little tool can help you prioritize your tasks.
+      </p>
+      <p>
+        In the text input below, enter all of the tasks that need to be
+        accomplished. Once you have entered all the tasks you wish, hit the
+        <em>Prioritize!</em> button and you will be taken to the next step.
+      </p>
 
-        <form>
-          <label for="list_input">Items to be prioritized:</label>
+      <div class="input-container raised-container">
+        <div style="flex-basis: 50%">
+          <label for="list_input">Item to be prioritized:</label>
           <input
             type="text"
             onfocus="this.value=''"
@@ -32,22 +33,16 @@
             name="list_input"
             required
           />
-          <p>
-            <input type="submit" id="input_btn" value="Add item" />
-          </p>
-        </form>
-      </section>
+          <div class="full-width-justify md-right-justify gap-16">
+            <button id="input_btn">Add</button>
+            <button id="prioritize_btn" >Prioritize!</button>
+          </div>
+        </div>
 
-      <section id="unsorted_list">
-        <ul id="unsorted"></ul>
-      </section>
-      <section>
-        <p>
-          <a href="prioritize.html">
-            <button id="prioritize_btn" type="button">Prioritize It!</button>
-          </a>
-        </p>
-      </section>
+        <div id="unsorted_list" style="flex-basis: 50%">
+          <ul id="unsorted"></ul>
+        </div>
+      </div>
     </main>
 
     <footer>

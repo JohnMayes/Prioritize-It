@@ -1,57 +1,78 @@
-import generatePairs from './generatePairs.js'
-import { write } from './data.js'
+import generatePairs from './generatePairs.js';
+import { write } from './data.js';
 
-let input
-const inputBtn = document.getElementById('input_btn')
-const prioritizeBtn = document.getElementById('prioritize_btn')
-const unsortedList = document.getElementById('unsorted')
+let input;
+const inputBtn = document.getElementById('input_btn');
+const listInput = document.getElementById('list_input');
+const prioritizeBtn = document.getElementById('prioritize_btn');
+const unsortedList = document.getElementById('unsorted');
 
-const list = []
-let listId = 1
+const list = [];
+let listId = 1;
 
 /* Generates an array of objects with two properties:
-	the name of the task, and an initial 'weight' value. */
+  the name of the task, and an initial 'weight' value. */
 
 function pushToList() {
-	list.push({
-		name: input,
-		weight: 0,
-		id: listId,
-	})
-	listId += 1
-	console.log(list)
+  list.push({
+    name: input,
+    weight: 0,
+    id: listId,
+  });
+  listId += 1;
+  console.log(list);
 
-	write('list', list)
-	event.preventDefault()
+  write('list', list);
+  event.preventDefault();
 }
 
 function writeToList() {
-	const listItem = document.createElement('li')
-	unsortedList.append(listItem)
-	listItem.textContent = input
+  const listItem = document.createElement('li');
+  unsortedList.append(listItem);
+  listItem.textContent = input;
 }
 
-function testList() {
-	if (list.length < 2) {
-		window.alert('You need at least two items in your to-do list')
-		event.preventDefault()
-	}
+function navigateToPage(url) {
+  window.location.href = url;
 }
 
-inputBtn.addEventListener('click', () => {
-	input = document.getElementById('list_input').value
-	pushToList()
-	writeToList()
-	document.getElementById('list_input').focus()
-	document.getElementById('list_input').value = ''
-})
+function listIsTwoOrGreater() {
+  if (list.length < 2) {
+    return false;
+  } else return true;
+}
+
+function handlePrioritizeClick(url) {
+  if (listIsTwoOrGreater() === false) {
+    alert('Two or more, please');
+    return;
+  } else {
+    navigateToPage(url);
+  }
+}
+
+function handleUpdateList () {
+  input = listInput.value;
+  pushToList();
+  writeToList();
+  listInput.focus();
+  listInput.value = '';
+}
+
+inputBtn.addEventListener('click', () => handleUpdateList());
+
+listInput.addEventListener('keydown', (event) => {
+  if (event.keyCode === 13) {
+    handleUpdateList();
+  }
+});
 
 /* Generates every possible combination of object pairs
-	in the initial 'list' array */
+  in the initial 'list' array */
 
 prioritizeBtn.addEventListener('click', () => {
-	testList()
-	const ids = list.map(toDo => toDo.id)
-	const pairs = generatePairs(ids)
-	write('pairs', pairs)
-})
+  handlePrioritizeClick('prioritize.html');
+  const ids = list.map((toDo) => toDo.id);
+  const pairs = generatePairs(ids);
+  write('pairs', pairs);
+});
