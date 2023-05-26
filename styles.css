@@ -4,7 +4,6 @@ body {
   align-items: center;
   min-height: 100vh;
   justify-content: center;
-  background-color: #f8fafc;
 }
 
 main {
@@ -20,16 +19,16 @@ header {
   text-align: center;
 }
 
-button {
-  text-decoration: none;
-}
-
 h2 {
   text-align: center;
 }
 
+input, button {
+  border-radius: 4px;
+}
+
 .raised-container {
-  background: #fff;
+  background: #ffffff;
   border-radius: 5px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 0 auto;
@@ -48,9 +47,6 @@ h2 {
   position: absolute;
   width: 100%;
   z-index: -1;
-}
-
-.raised-container:after {
   opacity: 0.1;
   right: -15px;
   top: 15px;
@@ -80,4 +76,19 @@ h2 {
 
 .item_btn {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .raised-container {
+    background: #404040
+  }
+  .raised-container:after {
+    background: #0a0a0a;
+  }
 }
